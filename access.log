@@ -1,0 +1,5 @@
+GET /all-timezone-cities 200 3312 - 151.099 ms
+GET /city?city=London 200 56 - 133.684 ms
+POST /hourly-forecast 200 117 - 149.276 ms
+GET /city?city=Kolkata 200 58 - 170.250 ms
+POST /hourly-forecast 200 117 - 170.567 ms

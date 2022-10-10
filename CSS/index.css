@@ -1,0 +1,594 @@
+#amimg {
+  position: relative;
+  top: 6px;
+  width: 3.2rem;
+}
+.arrow-img {
+  height: 1.7em;
+  vertical-align: bottom;
+}
+.arrow-icon {
+  background-color: black;
+  padding: 0;
+}
+body {
+  background-image: url("../ASSETS/background.png");
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
+.body-container {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-container {
+  background-color: black;
+}
+.bottom-heading-content {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-main-heading {
+  color: rgb(201, 193, 193);
+  font-size: 1.8em;
+  margin-left: 2.1em;
+}
+.card {
+  background-color: rgb(37, 37, 37);
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 4px #181818;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 240px;
+  margin: 0px 20px;
+  min-width: 14.7rem;
+  padding-left: 8px;
+  overflow-x: hidden;
+  width: 20%;
+  z-index: 1;
+}
+.card-container {
+  align-items: center;
+  display: flex;
+  height: 250px;
+  margin: 0 auto;
+  padding: 0.7em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: fit-content;
+}
+.card-date-time {
+  font-size: 1em;
+  font-weight: bold;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: 1s;
+}
+.card-img {
+  background-image: url("../ASSETS/london.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 65%;
+}
+.card > p {
+  font-weight: 500;
+  margin: 1.5%;
+  margin-left: 0;
+}
+.card-temp {
+  font-weight: bold;
+  font-size: 1.4em;
+  font-weight: normal;
+  vertical-align: top;
+}
+.carousel-arrow-image {
+  height: 1.8rem;
+}
+.carousel-div {
+  background-color: rgb(208, 208, 208);
+  border-radius: 50%;
+  height: 2.1rem;
+  opacity: 0.8;
+  padding: 0.5em;
+  width: 2.5em;
+}
+.carousel-div:hover {
+  opacity: 1;
+}
+.city-details-based-onWeather {
+  display: flex;
+  align-items: center;
+}
+.city-info {
+  display: flex;
+  flex-direction: column;
+}
+.city-info-top {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+.city-info-bottom {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 6em;
+  justify-content: center;
+}
+.city-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 0.9em;
+  margin-bottom: 0;
+}
+.cloud-img {
+  height: 2.5em;
+  width: 3em;
+}
+
+.cities-with-temp-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-column-gap: 5em;
+  grid-row-gap: 25px;
+  justify-items: center;
+  margin-left: 3.2em;
+  margin-right: 3.2em;
+  margin-bottom: 4em;
+}
+.continent-content {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+.continent-name {
+  color: rgba(218, 218, 5, 0.836);
+  font-size: 1.2em;
+}
+.continent-temp {
+  font-size: 1.5em;
+  margin-top: 0.2em;
+  text-align: end;
+}
+.date-style {
+  color: white;
+  font-size: 1.1rem;
+  padding: 0%;
+  margin: 0%;
+}
+.display-count {
+  background-color: rgb(41, 40, 40);
+  color: rgb(216, 211, 211);
+  height: 12px;
+  vertical-align: top;
+  width: 28px;
+}
+.dropdown {
+  background-color: rgb(80, 77, 77);
+  color: white;
+  font-size: 1em;
+  margin-left: 20px;
+  padding: 10px;
+  width: 8em;
+  text-align: center;
+}
+.flex-ratio {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  min-width: 680px;
+  width: 100%;
+}
+.future-forecast {
+  font-size: 1.3em;
+  margin: 0.5em;
+}
+.heading-sort-content {
+  color: rgb(201, 193, 193);
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3.5em;
+  width: 30%;
+}
+#humidity-img {
+  height: 1.4em;
+  width: 1.4em;
+}
+.humitity-temp {
+  font-size: 1.5em;
+}
+.humidity-per {
+  font-size: 1.1em;
+  font-weight: normal;
+  vertical-align: top;
+}
+.humidity-representation {
+  text-align: end;
+}
+#icon {
+  height: 70px;
+  width: 70px;
+}
+.line {
+  border-left: 2px dotted white;
+  height: 3.3em;
+  margin-top: 1.3em;
+  width: 2%;
+}
+
+.middle-container {
+  background-color: black;
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: white;
+  min-width: 80%;
+}
+.rainy-temp {
+  color: rgb(185, 183, 183);
+  font-size: 0.8em;
+  padding-left: 4px;
+  vertical-align: top;
+}
+#side-text {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: top;
+  width: 6em;
+}
+.sort-continent-temperature {
+  color: rgb(201, 193, 193);
+  display: inline;
+  font-size: 1.5em;
+}
+.state-name {
+  color: rgb(190, 186, 186);
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+#sun-image {
+  border-bottom: 2px solid skyblue;
+  padding-bottom: 3px;
+}
+.temp-info {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-basis: 35%;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+}
+.temp-color {
+  color: rgb(218, 212, 212);
+}
+.temp-percentage {
+  font-weight: lighter;
+}
+.temp-text {
+  display: inline;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 0;
+}
+.temp-cardstyle {
+  padding-right: 1.3em;
+}
+.tile-content {
+  background-color: rgb(51, 48, 48);
+  color: white;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 21em;
+}
+.tile-content:hover {
+  transform: scale(1.1);
+  transition: 2s;
+  box-shadow: 0px 0px 8px 2px;
+  color: cyan;
+}
+.tile-content > p {
+  margin: 0.3em;
+}
+#time_in_seconds {
+  font-size: 0.7em;
+}
+#time-based-line {
+  color: white;
+  font-size: 0.7em;
+  margin-bottom: 2.5em;
+}
+.time-color {
+  color: yellow;
+  display: inline;
+  font-size: 1.4rem;
+  margin: 0%;
+  padding: 0%;
+}
+.time-wise-info {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  width: inherit;
+}
+.time-wise-info-container {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7em;
+}
+.top-heading {
+  align-items: center;
+  display: flex;
+  height: 4em;
+  position: sticky;
+  left: 0;
+  right: 0;
+}
+.top-container {
+  align-items: center;
+  display: flex;
+  margin-top: 15px;
+  width: 100%;
+}
+.top-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+  font-weight: lighter;
+  margin: 0;
+  padding-left: 15%;
+  word-spacing: 2px;
+  width: 65%;
+}
+.top-content > h3 {
+  margin: 0;
+}
+.top-icon-style {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 0;
+  margin-right: 4em;
+  width: 40%;
+}
+
+.top-icon {
+  background-color: black;
+  width: 3em;
+}
+#warning {
+  color: red;
+  display: none;
+  font-size: 0.8em;
+  margin: 0;
+  text-align: right;
+}
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 8px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #787878;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #787878;
+  border-radius: 5px;
+}
+/* top section media query */
+@media all and (max-width: 1100px) {
+  .temp-info {
+    font-size: 1rem;
+  }
+  #temp-text {
+    font-size: 1.2rem;
+  }
+  .top-container {
+    height: 200px;
+  }
+  .future-forecast {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 900px) {
+  #amimg {
+    width: 2.2rem;
+  }
+  .city-info-bottom {
+    flex-basis: 6em;
+  }
+  .date-style {
+    font-size: 1rem;
+  }
+  #icon {
+    height: 60px;
+    width: 60px;
+  }
+  .dropdown {
+    font-size: 0.8rem;
+    height: 1.5em;
+    width: 7em;
+  }
+  .temp-info {
+    font-size: 0.9rem;
+  }
+  #temp-text {
+    font-size: 1rem;
+  }
+  .time-color {
+    font-size: 1rem;
+  }
+  .time-wise-info {
+    font-size: 0.8em;
+  }
+  .top-container {
+    height: 170px;
+  }
+  .future-forecast {
+    font-size: 1.1em;
+  }
+}
+@media all and (max-width: 770px) {
+  #amimg {
+    width: 2rem;
+  }
+  .date-style {
+    font-size: 0.9rem;
+  }
+  #icon {
+    height: 50px;
+    width: 50px;
+  }
+  .dropdown {
+    font-size: 0.6em;
+  }
+  .temp-info {
+    font-size: 0.8rem;
+    margin-left: 10px;
+    margin-top: -1em;
+  }
+  #temp-text {
+    font-size: 0.9rem;
+  }
+  .time-color {
+    font-size: 0.9rem;
+  }
+  .time-wise-info {
+    margin-top: 12px;
+  }
+  .future-forecast {
+    font-size: 1.1em;
+    margin: 0.5em;
+  }
+}
+@media all and (max-width: 680px) {
+  .top-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 15px;
+  }
+}
+
+/* middle section */
+@media all and (max-width: 800px) {
+  .card {
+    height: 230px;
+    gap: 3%;
+    min-width: 14em;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+  }
+  #side-text {
+    font-size: 0.9em;
+  }
+  .top-content {
+    padding-left: 0%;
+    font-size: 1.1em;
+    width: 55%;
+  }
+  .scroll-image {
+    height: 3rem;
+    width: 2.4rem;
+  }
+}
+
+/* bottom section */
+@media all and (max-width: 1140px) {
+  .bottom-main-heading {
+    margin-left: 1em;
+    font-size: 1.7em;
+  }
+  .heading-sort-content {
+    width: 33%;
+    margin-right: 2em;
+  }
+  .sort-continent-temperature {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+}
+@media all and (max-width: 945px) {
+  #arrow-img {
+    height: 1.1em;
+    width: 2em;
+  }
+  .bottom-main-heading {
+    font-size: 1.6em;
+    margin-left: 2.5em;
+  }
+  .heading-sort-content {
+    width: 40%;
+    margin-right: 2em;
+  }
+  .sort-continent-temperature {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 905px) {
+  #arrow-img {
+    height: 1.2em;
+    width: 1.7em;
+  }
+  .bottom-main-heading {
+    font-size: 1.5em;
+    margin-left: 2.4em;
+  }
+  .heading-sort-content {
+    margin-right: 1.7em;
+  }
+  .sort-continent-temperature {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 815px) {
+  #arrow-img {
+    height: 1.1em;
+    width: 0.8em;
+  }
+  .bottom-main-heading {
+    font-size: 1.3em;
+    margin-left: 2em;
+  }
+  .continent-name {
+    font-size: 1.1em;
+  }
+  .continent-temp {
+    font-size: 1.1em;
+  }
+  .heading-sort-content {
+    margin-right: 0.8em;
+  }
+  #humidity-img {
+    height: 1.2em;
+    width: 1.2em;
+  }
+  .humidity-per {
+    font-size: 0.9em;
+  }
+  .sort-continent-temperature {
+    font-size: 1.2em;
+  }
+  .state-name {
+    font-size: 1em;
+  }
+}

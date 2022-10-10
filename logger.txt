@@ -1,0 +1,10 @@
+
+Fri Oct 07 2022 11:35:37 AM Message body argument values are null in hourly forecast route call.
+Fri Oct 07 2022 12:40:10 PM Message body is null /city?city=London
+Fri Oct 07 2022 12:41:41 PM Message body argument values are null in http://127.0.0.1/city?city=London
+Fri Oct 07 2022 12:54:30 PM Message body is null in http://127.0.0.1/city?city=London
+Fri Oct 07 2022 2:06:15 PM cityname value is nullin http://127.0.0.1/city?city=London
+Fri Oct 07 2022 2:06:46 PM cityname value is nullin http://127.0.0.1/city?city=London
+Fri Oct 07 2022 2:07:02 PM cityname value is null in http://127.0.0.1/city?city=London
+Mon Oct 10 2022 10:16:32 AM nil is not defined in http://127.0.0.1/hourly-forecast
+Mon Oct 10 2022 10:17:34 AM Request body argument values are null  in http://127.0.0.1/hourly-forecast

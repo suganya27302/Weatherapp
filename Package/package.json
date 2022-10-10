@@ -1,0 +1,11 @@
+{
+  "name": "@suganya27/weather_data",
+  "version": "1.0.0",
+  "description": "Functions to get weather Data",
+  "main": "timeZone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suganya",
+  "license": "ISC"
+}
