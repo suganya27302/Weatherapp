@@ -50,6 +50,23 @@ function updateDataOnCityname() {
   return (async function () {
     if (checkCitynameIsValid(selectedCity)) {
       let cityName = document.getElementById("city_list").value;
+      switch (cityName) {
+        case "losangeles":
+          cityName = "LosAngeles";
+          break;
+        case "newyork":
+          cityName = "NewYork";
+          break;
+        case "brokenhill":
+          cityName = "BrokenHill";
+          break;
+        case "bangkok":
+          cityName = "BangKok";
+          break;
+        default:
+          cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
+          break;
+      }
       await appendNextFivehrs(cityName, weatherData);
       getNextFiveHrsTemperature();
       cityData = new CurrentCityInformation();
