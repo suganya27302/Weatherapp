@@ -45,7 +45,7 @@ let checkCitynameIsValid = (cityName) => {
  * @return {Function}function to update all data for the selected city and for invalid cityname.
  */
 function updateDataOnCityname() {
-  let selectedCity = document.getElementById("city_list").value.toLowerCase();
+  selectedCity = document.getElementById("city_list").value.toLowerCase();
   const dateOfaCity = document.getElementsByClassName("date-style");
   return (async function () {
     if (checkCitynameIsValid(selectedCity)) {
@@ -68,7 +68,8 @@ function updateDataOnCityname() {
           break;
       }
       await appendNextFivehrs(cityName, weatherData);
-      getNextFiveHrsTemperature();
+      selectedCity = document.getElementById("city_list").value.toLowerCase();
+
       cityData = new CurrentCityInformation();
       cityData.setCityDetails(selectedCity);
 
@@ -97,6 +98,7 @@ function updateDataOnCityname() {
       cityData.fetchAndUpdateTemperatureForNextfivehrs(selectedCity);
       document.getElementById("city_list").style.border = "0.5px solid black";
       document.getElementById("warning").style.display = "none";
+      getNextFiveHrsTemperature();
     } else {
       clearInterval(cityInterval);
       cityData.updateUIWithNil(dateOfaCity);
