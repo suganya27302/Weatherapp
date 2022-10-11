@@ -1,3 +1,4 @@
+let selectedCity;
 /**
  * fetch the live weather data by sending a
  * get request to the server.
@@ -27,21 +28,40 @@ function sendHttpRequestTofetchweatherData() {
  * @params {selectedCity} Current city
  * @return {object} city information {cityname :{time,date of the city}}
  */
-function sendHttpRequestTofetchCityInformation(selectedCity) {
+function sendHttpRequestTofetchCityInformation(selectedCity, default_city) {
+  let cityName;
   let response = new Promise(async (resolve, reject) => {
-    let cityName = await fetch(
-      `http://127.0.0.1:8125/city?city=${selectedCity}`,
-      {
+    if (default_city) {
+      cityName = await fetch(`http://127.0.0.1:8125/city?city=London`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-      }
-    );
+      });
+    } else {
+      cityName = await fetch(
+        `http://127.0.0.1:8125/city?city=${selectedCity}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
     if (cityName.ok) resolve(cityName.json());
     else {
-      alert("Message body is empty or message body argument values is null.");
-      reject("Something went wrong..");
+      alert("Not a Valid API, So sending default city as london.");
+      cityName = await fetch(`http://127.0.0.1:8125/city?city=London`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      document.getElementById("city_list").value = "London";
+      if (cityName.ok) {
+        resolve(cityName.json());
+      } else reject("Something went wrong..");
     }
   });
   return response;
@@ -65,7 +85,7 @@ function sendHttpRequestTofetchNextFivehrsTemperature(nameOfCity) {
     if (nextFiveHrs.ok) {
       resolve(nextFiveHrs.json());
     } else {
-      alert("Message body is empty or message body argument values is null.");
+      alert("Not a Valid API, So sending default city as london.");
       reject("Something went wrong..");
     }
   });
@@ -87,6 +107,7 @@ function updateKeyValue(array, key) {
   }, {});
 }
 
+let flag = 1;
 /**
  *
  * fetch the city information taking cityname as parameter and the return object is
@@ -99,7 +120,11 @@ function updateKeyValue(array, key) {
 async function fetchNextFivehrsForTheCity(nameOfCity, weatherData) {
   let nextFiveHrs;
   let cityInfo;
-  cityInfo = await sendHttpRequestTofetchCityInformation(nameOfCity);
+  if (flag) {
+    cityInfo = await sendHttpRequestTofetchCityInformation(nameOfCity, "True");
+    flag = 0;
+  } else cityInfo = await sendHttpRequestTofetchCityInformation(nameOfCity, "");
+  nameOfCity = document.getElementById("city_list").value;
   cityInfo.hours = 6;
   nextFiveHrs = await sendHttpRequestTofetchNextFivehrsTemperature(cityInfo);
   weatherData[nameOfCity.toLowerCase()].nextFiveHrs = nextFiveHrs.temperature;

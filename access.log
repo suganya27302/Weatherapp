@@ -1,5 +1,9 @@
-GET /all-timezone-cities 200 3312 - 151.099 ms
-GET /city?city=London 200 56 - 133.684 ms
-POST /hourly-forecast 200 117 - 149.276 ms
-GET /city?city=Kolkata 200 58 - 170.250 ms
-POST /hourly-forecast 200 117 - 170.567 ms
+GET /all-timezone-cities 200 3317 - 183.691 ms
+GET /city?city=London 200 57 - 148.168 ms
+POST /hourly-forecast 200 112 - 142.761 ms
+GET /city?city=Seoul 200 55 - 153.262 ms
+POST /hourly-forecast 200 114 - 157.223 ms
+GET /city?city=Moscow 200 57 - 170.856 ms
+POST /hourly-forecast 200 117 - 153.527 ms
+GET /city?city=Troll 200 56 - 137.051 ms
+POST /hourly-forecast 200 122 - 131.293 ms

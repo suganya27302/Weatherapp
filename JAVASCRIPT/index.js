@@ -3,73 +3,6 @@
 //import { weatherData } from "/DATA/data.js";
 import * as utility from "/JAVASCRIPT/utility.js";
 
-//loading page
-let weatherData;
-let cityInterval;
-let body_division = document.getElementsByClassName("body-container");
-if (weatherData == undefined) {
-  body_division[0].style.display = "none";
-  document.body.style.backgroundColor = "rgb(51,73,95)";
-  document.body.style.backgroundImage = "url('../ASSETS/load.gif')";
-  document.body.style.backgroundSize = "60%";
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundPosition = "top";
-}
-//Function call to fetch the weather data of all cities
-weatherData = await getWeatherData();
-// console.log("weatherData: ", weatherData);
-
-/**
- * It will fetch data from server through api call and
- * update data to the UI.
- *@params {} nothing
- *@return {void}
- */
-async function fetchDataFromServerAndUpdateDataOnUI() {
-  weatherData = await getWeatherData();
-  utility.updateDataOnCityname();
-  updateDataToTheCardAndTileContainer();
-}
-
-/**
- * It will update data on UI when the page loads.
- *@params {} nothing
- *@return {void} nothing
- */
-async function updateUIData() {
-  await utility.updateDataOnCityname();
-  await updateDataToTheCardAndTileContainer();
-}
-
-// update the city data for every four hours
-setInterval(fetchDataFromServerAndUpdateDataOnUI, 14400000);
-
-/**
- * It will update the temperature value of next five hours for every hour.
- *@params {} nothing
- *@return {void}
- */
-function getNextFiveHrsTemperature() {
-  clearInterval(cityInterval);
-  cityInterval = setInterval(async () => {
-    utility.updateDataOnCityname();
-  }, 3600000);
-}
-
-// A listner to update the UI data whenever the city is selected
-document
-  .getElementById("city_list")
-  .addEventListener("change", utility.updateDataOnCityname);
-
-// condition to check whether the data is fetched and display UI with data
-if (weatherData != undefined) {
-  body_division[0].style.display = "flex";
-  document.body.style.backgroundImage = "url('../ASSETS/background.png')";
-  document.body.style.backgroundSize = "cover";
-  utility.appendCitynameToDropdown(weatherData);
-  updateUIData();
-}
-
 /** @type {string,reference} */
 const emptyValue = "NIL";
 let timeout;
@@ -92,7 +25,6 @@ class CurrentCityInformation {
       this.temperature = weatherData[selectedCity].temperature;
       this.humidity = weatherData[selectedCity].humidity;
       this.precipitation = weatherData[selectedCity].precipitation;
-      this.nextFiveHrs = weatherData[selectedCity].nextFiveHrs;
     };
     this.getCityname = function () {
       return this.cityName;
@@ -111,9 +43,6 @@ class CurrentCityInformation {
     };
     this.getprecipitation = function () {
       return this.precipitation;
-    };
-    this.getnextFiveHrs = function () {
-      return this.nextFiveHrs;
     };
   }
   /**
@@ -314,8 +243,9 @@ class CurrentCityInformation {
    * @params {} nothing
    * @return {void} nothing
    */
-  fetchAndUpdateTemperatureForNextfivehrs() {
-    let tempList = this.getnextFiveHrs();
+  async fetchAndUpdateTemperatureForNextfivehrs(selectedCity) {
+    let tempList = weatherData[selectedCity].nextFiveHrs;
+
     for (var count = 1; count <= 5; count++) {
       let celsiusTemperature = `temp-after-${count}hour`;
       let tempIcon = `icon_based_tempafter-${count}hour`;
@@ -487,6 +417,73 @@ class CurrentCityInformation {
       document.getElementById(idName).innerHTML = timeValue + " " + partOfTime;
     }
   }
+}
+
+//loading page
+let weatherData;
+let cityInterval;
+let body_division = document.getElementsByClassName("body-container");
+if (weatherData == undefined) {
+  body_division[0].style.display = "none";
+  document.body.style.backgroundColor = "rgb(51,73,95)";
+  document.body.style.backgroundImage = "url('../ASSETS/load.gif')";
+  document.body.style.backgroundSize = "60%";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundPosition = "top";
+}
+//Function call to fetch the weather data of all cities
+weatherData = await getWeatherData();
+// console.log("weatherData: ", weatherData);
+
+/**
+ * It will fetch data from server through api call and
+ * update data to the UI.
+ *@params {} nothing
+ *@return {void}
+ */
+async function fetchDataFromServerAndUpdateDataOnUI() {
+  weatherData = await getWeatherData();
+  utility.updateDataOnCityname();
+  updateDataToTheCardAndTileContainer();
+}
+
+/**
+ * It will update data on UI when the page loads.
+ *@params {} nothing
+ *@return {void} nothing
+ */
+function updateUIData() {
+  utility.updateDataOnCityname();
+  updateDataToTheCardAndTileContainer();
+}
+
+// update the city data for every four hours
+setInterval(fetchDataFromServerAndUpdateDataOnUI, 14400000);
+
+/**
+ * It will update the temperature value of next five hours for every hour.
+ *@params {} nothing
+ *@return {void}
+ */
+function getNextFiveHrsTemperature() {
+  clearInterval(cityInterval);
+  cityInterval = setInterval(async () => {
+    utility.updateDataOnCityname();
+  }, 3600000);
+}
+
+// A listner to update the UI data whenever the city is selected
+document
+  .getElementById("city_list")
+  .addEventListener("change", utility.updateDataOnCityname);
+
+// condition to check whether the data is fetched and display UI with data
+if (weatherData != undefined) {
+  body_division[0].style.display = "flex";
+  document.body.style.backgroundImage = "url('../ASSETS/background.png')";
+  document.body.style.backgroundSize = "cover";
+  utility.appendCitynameToDropdown(weatherData);
+  updateUIData();
 }
 
 // middle section javascript
