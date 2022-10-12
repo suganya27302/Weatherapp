@@ -108,7 +108,7 @@ app.get("/city", function (request, response) {
 
     response
       .status(404)
-      .json("Error: Not a valid Endpoint.Please check with it.");
+      .json({ Error: "Not a valid Endpoint,Please check with it." });
   }
 });
 
@@ -129,13 +129,12 @@ app.post("/hourly-forecast", function (request, response) {
       response.json(nextFiveHrs);
     });
 
-    if (!request.body)
-      throw new Error("Request body argument values are null ");
+    if (!request.body) throw new Error("Request body is null ");
     else {
       if (
         !(request.body.city_Date_Time_Name && request.body.hours && weatherData)
       )
-        throw new Error("Request body is null ");
+        throw new Error("Request body argument values are null");
       else {
         let message = {
           messagename: "GetTemperature",
@@ -166,7 +165,7 @@ app.post("/hourly-forecast", function (request, response) {
 
     response
       .status(404)
-      .json("Error: Not a valid Endpoint.Please check with it.");
+      .json({ Error: "Not a valid Endpoint,Please check with it." });
   }
 });
 

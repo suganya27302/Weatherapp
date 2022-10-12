@@ -608,9 +608,10 @@ function updateDataToTheCardAndTileContainer() {
       date.setAttribute("class", "card-date-time");
       date.innerHTML = liveDateOfCity;
       time.setAttribute("class", "card-date-time");
+      this.displayLiveTimeToTheCity(cityname.toLowerCase(), time);
       setInterval(
         this.displayLiveTimeToTheCity,
-        0,
+        1000,
         cityname.toLowerCase(),
         time
       );
@@ -1149,9 +1150,10 @@ function updateDataToTheCardAndTileContainer() {
       let liveTime = document.createElement("span");
       stateName.setAttribute("class", "state-name");
       stateName.innerHTML = cityname + ", ";
+      this.displayLiveTimeToTheCity(cityname.toLowerCase(), liveTime);
       setInterval(
         this.displayLiveTimeToTheCity,
-        0,
+        1000,
         cityname.toLowerCase(),
         liveTime
       );
