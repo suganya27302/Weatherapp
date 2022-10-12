@@ -108,7 +108,7 @@ app.get("/city", function (request, response) {
 
     response
       .status(404)
-      .json({ Error: "Not a valid Endpoint,Please check with it." });
+      .json({ Error: "Not a valid Endpoint,Please check with it." + "\n" + error.message});
   }
 });
 
@@ -165,7 +165,7 @@ app.post("/hourly-forecast", function (request, response) {
 
     response
       .status(404)
-      .json({ Error: "Not a valid Endpoint,Please check with it." });
+      .json({ Error: "Not a valid Endpoint,Please check with it."+ "\n" + error.message });
   }
 });
 
