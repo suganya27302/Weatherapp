@@ -51,7 +51,9 @@ function sendHttpRequestTofetchCityInformation(selectedCity, default_city) {
     }
     if (cityName.ok) resolve(cityName.json());
     else {
-      alert("Not a Valid API, So sending default city as london.");
+      let error = await cityName.json();
+
+      alert(error.Error + "\n" + "So sending default city london's data. ");
       cityName = await fetch(`http://127.0.0.1:8125/city?city=London`, {
         method: "GET",
         headers: {
@@ -85,7 +87,9 @@ function sendHttpRequestTofetchNextFivehrsTemperature(nameOfCity) {
     if (nextFiveHrs.ok) {
       resolve(nextFiveHrs.json());
     } else {
-      alert("Not a Valid API, So sending default city as london.");
+      let error = await nextFiveHrs.json();
+
+      alert(error.Error + "\n" + "So sending default city london's data. ");
       reject("Something went wrong..");
     }
   });
